@@ -40,27 +40,27 @@ public class NsfoucsParser {
 	
 	public void loadConfigure()
 	{
-		// ¶ÁÈ¡configureÎÄ¼şÖĞµÄ²ÎÊı
+		// è¯»å–configureæ–‡ä»¶ä¸­çš„å‚æ•°
 		
 		url = "https://" + v5_product_host + "/httpRpc/deltask?user=" + user + "&password=" + password;
 	}
 	
 	/**
-	 * Áª¶¯Ô¼¶¨
+	 * è”åŠ¨çº¦å®š
 	 * @param 
-	 * @return	<´íÎóºÅ>:<ÌáÊ¾ĞÅÏ¢>
+	 * @return	<é”™è¯¯å·>:<æç¤ºä¿¡æ¯>
 	 */
 	public String shakeHands()
 	{
 		StringBuffer result = new StringBuffer();
 		try {
-			// ´´½¨URL¶ÔÏó
+			// åˆ›å»ºURLå¯¹è±¡
 			myURL = new URL(url + "?id=" + id + "?lang=" + lang);
-			// ´´½¨HttpsURLConnection¶ÔÏó£¬²¢ÉèÖÃÆäSSLSocketFactory¶ÔÏó
+			// åˆ›å»ºHttpsURLConnectionå¯¹è±¡ï¼Œå¹¶è®¾ç½®å…¶SSLSocketFactoryå¯¹è±¡
 	        HttpsURLConnection httpsConn = (HttpsURLConnection) myURL.openConnection();
-	        // È¡µÃ¸ÃÁ¬½ÓµÄÊäÈëÁ÷£¬ÒÔ¶ÁÈ¡ÏìÓ¦ÄÚÈİ
+	        // å–å¾—è¯¥è¿æ¥çš„è¾“å…¥æµï¼Œä»¥è¯»å–å“åº”å†…å®¹
 	        BufferedReader reader=new BufferedReader(new InputStreamReader(httpsConn.getInputStream(),"utf-8"));
-	        // ¶ÁÈ¡·şÎñÆ÷µÄÏìÓ¦ÄÚÈİ²¢ÏÔÊ¾        
+	        // è¯»å–æœåŠ¡å™¨çš„å“åº”å†…å®¹å¹¶æ˜¾ç¤º        
 	        String line = null;
             while((line=reader.readLine()) !=null)
             	result.append(line);
@@ -72,21 +72,21 @@ public class NsfoucsParser {
 	}
 	
 	/**
-	 * Áª¶¯Æô¶¯ÈÎÎñ
+	 * è”åŠ¨å¯åŠ¨ä»»åŠ¡
 	 * @param 
-	 * @return	<´íÎóºÅ>:<ÌáÊ¾ĞÅÏ¢>
+	 * @return	<é”™è¯¯å·>:<æç¤ºä¿¡æ¯>
 	 */
 	public String createTasks(String templateid)
 	{
 		StringBuffer result = new StringBuffer();
 		try {
-			// ´´½¨URL¶ÔÏó
+			// åˆ›å»ºURLå¯¹è±¡
 			myURL = new URL(url + "&targets=" + targets + "?templateid=" + templateid + "?class=" + ns_class);
-			// ´´½¨HttpsURLConnection¶ÔÏó£¬²¢ÉèÖÃÆäSSLSocketFactory¶ÔÏó
+			// åˆ›å»ºHttpsURLConnectionå¯¹è±¡ï¼Œå¹¶è®¾ç½®å…¶SSLSocketFactoryå¯¹è±¡
 	        HttpsURLConnection httpsConn = (HttpsURLConnection) myURL.openConnection();
-	        // È¡µÃ¸ÃÁ¬½ÓµÄÊäÈëÁ÷£¬ÒÔ¶ÁÈ¡ÏìÓ¦ÄÚÈİ
+	        // å–å¾—è¯¥è¿æ¥çš„è¾“å…¥æµï¼Œä»¥è¯»å–å“åº”å†…å®¹
 	        BufferedReader reader=new BufferedReader(new InputStreamReader(httpsConn.getInputStream(),"utf-8"));
-	        // ¶ÁÈ¡·şÎñÆ÷µÄÏìÓ¦ÄÚÈİ²¢ÏÔÊ¾        
+	        // è¯»å–æœåŠ¡å™¨çš„å“åº”å†…å®¹å¹¶æ˜¾ç¤º        
 	        String line = null;
             while((line=reader.readLine()) !=null)
             	result.append(line);
